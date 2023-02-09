@@ -255,16 +255,6 @@ function processCategoryTags(post, domain) {
 		.map(({ $: attributes }) => decodeURIComponent(attributes.nicename));
 }
 
-function getDescription(post){
-	const postmeta = post.postmeta.find(postmeta => postmeta.meta_key[0] === '_yoast_wpseo_metadesc');
-	if(postmeta === undefined){
-		return " ";
-	} else{
-		console.log(postmeta.meta_value);
-	return postmeta.meta_value;
-}
-}
-
 function collectAttachedImages(data) {
 	const images = getItemsOfType(data, 'attachment')
 		// filter to certain image file types
